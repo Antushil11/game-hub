@@ -1,0 +1,163 @@
+[
+  {
+    "id": "1",
+    "title": "Player Unknown's Battlegrounds: PUBG",
+    "coverPhoto": "https://i.ibb.co.com/KzLf0dQ6/PUBG.webp",
+    "category": "FPS",
+    "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
+    "description": "PUBG Mobile is a fast-paced battle royale game where players fight for survival, strategy, and victory on dynamic maps.",
+    "ratings": "4.5",
+    "developer": "Krafton"
+  },
+  {
+    "id": "2",
+    "title": "Call of Duty: Mobile",
+    "coverPhoto": "https://i.ibb.co.com/dsRH9cqk/Call-of-Duty-Mobile.webp",
+    "category": "FPS",
+    "downloadLink": "https://www.callofduty.com/mobile",
+    "description": "Call of Duty: Mobile brings the iconic multiplayer and battle royale experience to mobile with realistic graphics and action.",
+    "ratings": "4.6",
+    "developer": "Activision"
+  },
+  {
+    "id": "3",
+    "title": "Clash of Clans",
+    "coverPhoto": "https://i.ibb.co.com/3mnsT7WL/Clash-of-Clans.webp",
+    "category": "Strategy",
+    "downloadLink": "https://supercell.com/en/games/clashofclans/",
+    "description": "Build your village, train your army, and raid other players in this legendary strategy game by Supercell.",
+    "ratings": "4.7",
+    "developer": "Supercell"
+  },
+  {
+    "id": "4",
+    "title": "Genshin Impact",
+    "coverPhoto": "https://i.ibb.co.com/jkYLmfDV/Genshin-Impact.jpg",
+    "category": "Adventure",
+    "downloadLink": "https://genshin.hoyoverse.com/",
+    "description": "Explore a vast open world, harness elemental powers, and uncover mysteries in this anime-style RPG.",
+    "ratings": "4.8",
+    "developer": "HoYoverse"
+  },
+  {
+    "id": "5",
+    "title": "Among Us",
+    "coverPhoto": "https://i.ibb.co.com/67WrkFsS/Among-Us.jpg",
+    "category": "Party",
+    "downloadLink": "https://innersloth.com/games/among-us/",
+    "description": "A social deduction game where crewmates work together to complete tasks — but impostors lurk among them.",
+    "ratings": "4.4",
+    "developer": "Innersloth"
+  },
+  {
+    "id": "6",
+    "title": "Free Fire",
+    "coverPhoto": "https://i.ibb.co.com/TMsJM0wG/Free-Fire.jpg",
+    "category": "Battle Royale",
+    "downloadLink": "https://ff.garena.com/",
+    "description": "Fast-paced survival shooter game where players aim to be the last one standing on a remote island.",
+    "ratings": "4.3",
+    "developer": "Garena"
+  },
+  {
+    "id": "7",
+    "title": "Minecraft",
+    "coverPhoto": "https://i.ibb.co.com/fYt8grsD/Minecraft.webp",
+    "category": "Sandbox",
+    "downloadLink": "https://www.minecraft.net/",
+    "description": "Create, explore, and survive in a blocky world filled with endless possibilities and adventures.",
+    "ratings": "4.8",
+    "developer": "Mojang Studios"
+  },
+  {
+    "id": "8",
+    "title": "Valorant",
+    "coverPhoto": "https://i.ibb.co.com/QF4HGQMc/Valorant.jpg",
+    "category": "FPS",
+    "downloadLink": "https://playvalorant.com/",
+    "description": "A tactical first-person shooter that blends gunplay with unique character abilities in team-based combat.",
+    "ratings": "4.7",
+    "developer": "Riot Games"
+  },
+  {
+    "id": "9",
+    "title": "Fortnite",
+    "coverPhoto": "https://i.ibb.co.com/KzLDDkKz/Fortnite.jpg",
+    "category": "Battle Royale",
+    "downloadLink": "https://www.epicgames.com/fortnite/",
+    "description": "Battle, build, and explore in Epic Games’ colorful and fast-paced battle royale adventure.",
+    "ratings": "4.6",
+    "developer": "Epic Games"
+  },
+  {
+    "id": "10",
+    "title": "Asphalt 9: Legends",
+    "coverPhoto": "https://i.ibb.co.com/gbhb5Mn2/Asphalt-9-Legends.jpg",
+    "category": "Racing",
+    "downloadLink": "https://www.gameloft.com/asphalt9/",
+    "description": "A high-speed arcade racing game featuring luxury cars, cinematic graphics, and thrilling stunts.",
+    "ratings": "4.5",
+    "developer": "Gameloft"
+  },
+  {
+    "id": "11",
+    "title": "Candy Crush Saga",
+    "coverPhoto": "https://i.ibb.co.com/7JcqmWzB/Candy-Crush-Saga.webp",
+    "category": "Puzzle",
+    "downloadLink": "https://king.com/game/candycrush",
+    "description": "Match colorful candies to solve puzzles and progress through hundreds of sweet levels.",
+    "ratings": "4.3",
+    "developer": "King"
+  },
+  {
+    "id": "12",
+    "title": "League of Legends: Wild Rift",
+    "coverPhoto": "https://i.ibb.co.com/3mQFLbjV/League-of-Legends-Wild-Rift.jpg",
+    "category": "MOBA",
+    "downloadLink": "https://wildrift.leagueoflegends.com/",
+    "description": "Team up and outplay opponents in 5v5 MOBA battles optimized for mobile devices.",
+    "ratings": "4.6",
+    "developer": "Riot Games"
+  },
+  {
+    "id": "13",
+    "title": "Subway Surfers",
+    "coverPhoto": "https://i.ibb.co.com/chVWxp3y/Subway-Surfers.webp",
+    "category": "Arcade",
+    "downloadLink": "https://sybogames.com/games/subway-surfers/",
+    "description": "Dash, dodge, and jump your way through cityscapes in this fast-paced endless runner.",
+    "ratings": "4.5",
+    "developer": "SYBO Games"
+  },
+  {
+    "id": "14",
+    "title": "Apex Legends Mobile",
+    "coverPhoto": "https://i.ibb.co.com/sxwB74w/Apex-Legends-Mobile.jpg",
+    "category": "Battle Royale",
+    "downloadLink": "https://www.ea.com/games/apex-legends",
+    "description": "A dynamic squad-based battle royale featuring unique legends, abilities, and fast-paced combat.",
+    "ratings": "4.4",
+    "developer": "Electronic Arts"
+  },
+  {
+    "id": "15",
+    "title": "Temple Run 2",
+    "coverPhoto": "https://i.ibb.co.com/bg7NkzwZ/Temple-Run-2.png",
+    "category": "Adventure",
+    "downloadLink": "https://imangistudios.com/games/temple-run-2/",
+    "description": "Run, jump, and slide through ancient temples while escaping from cursed idols in this endless runner.",
+    "ratings": "4.4",
+    "developer": "Imangi Studios"
+  },
+  {
+    "id": "16",
+    "title": "Shadow Fight 4: Arena",
+    "coverPhoto": "https://i.ibb.co.com/zTCbT5YC/Shadow-Fight-4-Arena.jpg",
+    "category": "Fighting",
+    "downloadLink": "https://shadowfight.com/",
+    "description": "A 3D fighting game where you battle with shadow warriors using martial arts and magic powers.",
+    "ratings": "4.6",
+    "developer": "Nekki"
+  }
+]
+
