@@ -3,6 +3,10 @@ import HomeLayout from "../layout/HomeLayout";
 import Homepage from "../Pages/Homepage";
 import Newsletter from "../Pages/Newsletter";
 import Games from "../Pages/Games";
+import Login from "../Pages/Login";
+import Register from "../Pages/Register";
+import AuthLayout from "../layout/AuthLayout";
+import GameDetails from "../Pages/GameDetails";
 
 const router = createBrowserRouter([
   {
@@ -27,17 +31,27 @@ const router = createBrowserRouter([
         },
     ]
   },
-//   {
-//     path: "/auth",
-//     element: <div>Authenticatio layout</div>,
-//   },
-//   {
-//     path: "/games",
-//     element: <div>Games layout</div>,
-//   },
+  {
+    path: "/auth",
+    element: <AuthLayout></AuthLayout>,
+    children:[
+      {
+        path:"/auth/login",
+        element:<Login></Login>
+      },
+      {
+        path:"/auth/register",
+        element:<Register></Register>
+      },
+    ]
+  },
+  {
+    path: "/games-details/:id",
+    element: <GameDetails></GameDetails>,
+  },
   {
     path: "/*",
-    element: <div>Error 404</div>,
+    element: <div className="flex justify-center items-center">Error 404</div>,
   },
 ]);
 

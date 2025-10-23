@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
-import {} from "react-router";
+
 import MyContainer from "../components/MyContainer";
 import GameCard from "../components/GameCard";
 import Games from "./Games";
@@ -10,6 +10,7 @@ import Newsletter from "./Newsletter";
 
 const Homepage = () => {
   //   const games = useLoaderData();
+  
 
   const {products} = useProducts();
 
