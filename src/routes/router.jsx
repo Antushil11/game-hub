@@ -59,7 +59,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/*",
-    element: <div className="flex justify-center items-center">404 “Page Not Found”</div>,
+    element: <div className="flex justify-center items-center text-6xl">404 “Page Not Found”</div>,
   },
 ]);
 

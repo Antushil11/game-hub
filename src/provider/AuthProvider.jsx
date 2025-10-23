@@ -4,19 +4,23 @@ import { AuthContext } from "./AuthContext";
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
 const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider();
+// const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  console.log(loading,user)
+  console.log(loading, user);
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -31,6 +35,11 @@ const AuthProvider = ({ children }) => {
   const logOut = () => {
     setLoading(true);
     return signOut(auth);
+  };
+
+  const signInWithEmailFunc = () => {
+    setLoading(true);
+    return signInWithPopup(auth, googleProvider);
   };
 
   useEffect(() => {
@@ -52,6 +61,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     loading,
     setLoading,
+    signInWithEmailFunc,
   };
 
   return <AuthContext value={authData}>{children}</AuthContext>;
