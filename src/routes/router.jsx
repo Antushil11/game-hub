@@ -9,6 +9,7 @@ import AuthLayout from "../layout/AuthLayout";
 import GameDetails from "../Pages/GameDetails";
 import PrivateRoute from "../provider/PrivateRoute";
 import Loading from "../Pages/Loading";
+import ProfilePages from "../components/ProfilePages";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,12 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
     ],
+  },
+
+  {
+    path: "/profile",
+    element:<ProfilePages></ProfilePages>
+
   },
   {
     path: "/games-details/:id",

@@ -1,28 +1,27 @@
 import React, { use } from "react";
 import logo from "../../src/assets/create a GameHub log.png";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import MyContainer from "./MyContainer";
 import MyLink from "./MyLink";
 import { AuthContext } from "../provider/AuthContext";
-import { toast } from "react-toastify";
+import {  } from "react-toastify";
+import ProfilePages from "./ProfilePages";
 
 const Navbar = () => {
-  const { user, logOut } = use(AuthContext);
-  
+  const { user,  } = use(AuthContext);
 
-  const handleSignOut = () => {
-      logOut()
-        .then(() => {
-          toast.success("Your Logout successfully");
-        })
-        .catch((error) => {
-          toast.error(error.message);
-        });
-    };
-  
+  // const handleSignOut = () => {
+  //   logOut()
+  //     .then(() => {
+  //       toast.success("Your Logout successfully");
+  //     })
+  //     .catch((error) => {
+  //       toast.error(error.message);
+  //     });
+  // };
+
   return (
     <div className="navbar  bg-slate-100f py-2 border-b-2 border-gray-500 bg-black lg:mb-0 md:mb-0 mb-20">
-      
       <MyContainer>
         <div className="navbar  shadow-sm">
           <div className="navbar-start">
@@ -72,25 +71,44 @@ const Navbar = () => {
               </ul>
             </ul>
 
-            {user ?  (
-          <div className="">
-            <img
-              src={
-                user?.photoURL ||
-                "https://www.canto.com/cdn/2019/08/19194138/image-url-3.jpg"
-              }
-              className="h-20 w-20 rounded-full mx-auto"
-              alt=""
-            />
-            <div className="flex flex-col items-center justify-center gap-2 mt-2">
-              <h2 className="text-xl font-semibold">{user?.displayName}</h2>
-              <h2 className="text-white/80 font-semibold">{user?.email}</h2>
-              <button onClick={handleSignOut} className="btn bg-primary">
-                Sign Out
-              </button>
-            </div>
-          </div>
-        ): (
+            {user ? (
+              <div className="">
+                {/* change popover-1 and --anchor-1 names. Use unique names for each dropdown */}
+                {/* For TSX uncomment the commented types below */}
+                <NavLink to={"/profile"}
+                  className=""
+                  popoverTarget="popover-1"
+                  style={
+                    { anchorName: "--anchor-1" } /* as React.CSSProperties */
+                  }
+                >
+                  <img
+                    src={
+                      user?.photoURL ||
+                      "https://www.canto.com/cdn/2019/08/19194138/image-url-3.jpg"
+                    }
+                    className="h-13 w-14 rounded-full mx-auto"
+                    alt=""
+                  />
+                </NavLink>
+
+                <div
+                  className="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
+                  popover="auto"
+                  id="popover-1"
+                  style={
+                    {
+                      positionAnchor: "--anchor-1",
+                    } /* as React.CSSProperties */
+                  }
+                >
+                  
+                  <div className="flex flex-col items-center justify-center gap-2 mt-2">
+                   <ProfilePages></ProfilePages>
+                  </div>
+                </div>
+              </div>
+            ) : (
               <button className="btn bg-linear-to-r from-[#FFA726] to-[#FB8C00] text-white">
                 <Link to={"/auth/login"}>Sign In</Link>
               </button>
