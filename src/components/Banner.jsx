@@ -32,20 +32,20 @@ const Banner = () => {
       img: godfall,
       title: "Godfall",
       desc: "Unleash divine power and conquer realms in this breathtaking action RPG.",
-      btn: "Explore Game",
+      btn: "Play Now",
     },
     {
       id: 3,
       img: godwar,
       title: "God of War",
       desc: "Join Kratos and Atreus on a journey of myth, vengeance, and redemption.",
-      btn: "Learn More",
+      btn: "Play Now",
     },
   ];
 
   return (
     <MyContainer className="mt-2 ">
-      <div className="w-full overflow-hidden rounded-2xl shadow-2xl">
+      <div className="w-full overflow-hidden rounded-2xl shadow-2xl ">
         <Slider {...settings}>
           {slides.map((slide) => (
             <div
@@ -64,7 +64,7 @@ const Banner = () => {
                 <p className="text-lg md:text-xl text-gray-400  mb-6 max-w-2xl">
                   {slide.desc}
                 </p>
-                <button className="bg-primary hover:bg-amber-800 text-text-gray-100  px-6 py-3 rounded-lg text-lg font-semibold transition-all duration-300 w-fit">
+                <button className="bg-primary hover:bg-amber-800 text-text-gray-100 cursor-pointer  px-6 py-3 rounded-lg text-lg font-semibold transition-all duration-300 w-fit">
                   {slide.btn}
                 </button>
               </div>

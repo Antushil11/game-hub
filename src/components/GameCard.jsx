@@ -15,7 +15,7 @@ const GameCard = ({ game }) => {
   } = game;
 
   return (
-    <div className="bg-black   border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
+    <div className="bg-black   border border-gray-600 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden hover:scale-106">
       <img src={coverPhoto} alt={title} className="w-full h-88 object-cover" />
       <div className="p-4">
         <h2 className="text-lg font-semibold text-white mb-1 ">{title}</h2>

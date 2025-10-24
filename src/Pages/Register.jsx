@@ -1,14 +1,14 @@
 import React, { use, useState } from "react";
-import { Link } from "react-router";
+import { Link, Navigate, } from "react-router";
 import { AuthContext } from "../provider/AuthContext";
 import { toast } from "react-toastify";
 import { FaEye, FaShower } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
-import { sendEmailVerification } from "firebase/auth";
+
 
 const Register = () => {
   // Sign Up
-  const { createUser, setUser, updateProfileFunc} = use(AuthContext);
+  const { createUser, setUser, updateProfileFunc } = use(AuthContext);
 
   const [show, setShow] = useState(false);
 
@@ -35,6 +35,8 @@ const Register = () => {
       return;
     }
 
+    
+
     //1 step create user
 
     createUser(email, password)
@@ -42,16 +44,10 @@ const Register = () => {
         //2 step update profile
         updateProfileFunc(displayName, photoURL)
           .then(() => {
-            //3step email virification
-            sendEmailVerification(result.user)
-              .then((res) => {
-                console.log(res);
-                toast.success(" Check your email to active your account Verified your account");
-              })
-              .catch((error) => {
-                const errorMessage = error.message;
-                toast.error(errorMessage);
-              });
+            toast.success(
+              "Successfuly Register"
+            );
+            (`${location.state ? location.state : "/"}`);
           })
           .catch((error) => {
             console.log(error);

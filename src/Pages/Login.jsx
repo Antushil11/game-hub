@@ -32,11 +32,7 @@ const Login = () => {
 
     signIn(email, password)
       .then((result) => {
-        console.log(result);
-        if (!result.user?.emailVerified) {
-          toast.error("you email is not verified ");
-          return;
-        }
+        
         const user = result.user;
         setUser(user);
         toast.success("Login successfully");

@@ -73,6 +73,16 @@ const Newsletter = () => {
             </div>
           </div>
 
+          <div className="mt-4 mb-4 ">
+            <h2>I wish to pay by:<span className="text-red-600">*</span></h2>
+            
+            <select name="" id="" className="border  max-w-full border-gray-300 rounded-lg p-2 lg:flex-1 md:flex-1">
+              <option className="bg-[#1A0E03] "  value="seleted">seleted</option>
+              <option className="bg-[#1A0E03] "  value="Paypal">Paypal</option>
+              <option className="bg-[#1A0E03] "  value="Check / Postal Order (Please make payable to Newsletter Company Name">Check / Postal Order (Please make payable to Newsletter Company Name)</option>
+            </select>
+          </div>
+
           <label className="mb-6 ">Full Name</label>
           <span className="text-red-600">*</span>
           <div className="flex flex-col lg:flex-row md:flex-row  gap-2 mb-6">

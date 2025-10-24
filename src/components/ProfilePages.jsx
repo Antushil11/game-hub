@@ -3,6 +3,7 @@ import { AuthContext } from "../provider/AuthContext";
 import { toast } from "react-toastify";
 import { Link, Links } from "react-router";
 
+
 const ProfilePages = () => {
   const { logOut, user } = use(AuthContext);
   const handleSignOut = () => {
@@ -16,13 +17,14 @@ const ProfilePages = () => {
   };
   return (
     <div className="border-2 max-w-full max-h-4/6  py-8 flex items-center justify-center min-h-screen">
+      
     
       <div className="w-full max-w-md text-white backdrop-blur-lg bg-white/10 border border-white/20 shadow-2xl rounded-2xl p-8 ">
         <h2 className="text-2xl font-bold text-gray-400 mb-6 text-center">Profile Details</h2>
         <img
           src={
             user?.photoURL ||
-            "https://www.canto.com/cdn/2019/08/19194138/image-url-3.jpg"
+            ""
           }
           className="h-full w-full  mx-auto"
           alt=""
