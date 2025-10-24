@@ -10,6 +10,7 @@ import GameDetails from "../Pages/GameDetails";
 import PrivateRoute from "../provider/PrivateRoute";
 import Loading from "../Pages/Loading";
 import ProfilePages from "../components/ProfilePages";
+import ErrorPage from "../Pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -66,7 +67,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/*",
-    element: <div className="flex justify-center items-center text-6xl">404 “Page Not Found”</div>,
+    element:<ErrorPage></ErrorPage>
   },
 ]);
 

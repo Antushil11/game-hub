@@ -84,8 +84,10 @@ const Navbar = () => {
                 >
                   <img
                     src={
-                      user?.photoURL ||
-                      "https://www.canto.com/cdn/2019/08/19194138/image-url-3.jpg"
+                    `${user ? user.photoURL: "" }`
+                      
+                      // user?.photoURL ||
+                      // ""
                     }
                     className="h-13 w-14 rounded-full mx-auto"
                     alt=""

@@ -1,5 +1,5 @@
 import React, { use, useState } from "react";
-import { Link, Navigate, } from "react-router";
+import { Link, Navigate, useNavigate, } from "react-router";
 import { AuthContext } from "../provider/AuthContext";
 import { toast } from "react-toastify";
 import { FaEye, FaShower } from "react-icons/fa";
@@ -12,6 +12,7 @@ const Register = () => {
 
   const [show, setShow] = useState(false);
 
+  const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
 
@@ -47,7 +48,7 @@ const Register = () => {
             toast.success(
               "Successfuly Register"
             );
-            (`${location.state ? location.state : "/"}`);
+            navigate(`${location.state ? location.state : "/"}`);
           })
           .catch((error) => {
             console.log(error);
