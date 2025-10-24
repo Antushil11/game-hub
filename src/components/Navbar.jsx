@@ -21,7 +21,7 @@ const Navbar = () => {
   // };
 
   return (
-    <div className="navbar  bg-slate-100f py-2 border-b-2 border-gray-500 bg-black lg:mb-0 md:mb-0 mb-20">
+    <div className="navbar  bg-slate-100f py-2 border-b-2 border-gray-500 bg-black ">
       <MyContainer>
         <div className="navbar  shadow-sm">
           <div className="navbar-start">

@@ -67,7 +67,7 @@ const Login = () => {
     const email = emailRef.current.value;
     sendPassResetEmailFunc(email)
       .then(() => {
-        toast.success("cheak your email ");
+        toast.success("cheak your email. Reset your password.");
       })
       .catch((error) => {
         toast.error(error.message);

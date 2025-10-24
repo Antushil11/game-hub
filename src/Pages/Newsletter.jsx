@@ -8,7 +8,7 @@ const Newsletter = () => {
       <h2 className="text-2xl font-bold text-gray-400 mb-6 text-center">
         Newsletter Subscription Form
       </h2>
-      <div className="p-8 mt-6">
+      <div className="p-8 mt-6 ">
         <form className="p-8 ">
           <div className=" rounded-2xl shadow-md ">
             <h2 className="text-xl font-semibold mb-6">
@@ -72,23 +72,22 @@ const Newsletter = () => {
               </label>
             </div>
           </div>
-          
-          <option value=""></option>
-          <label className="mb-6">Full Name</label>
+
+          <label className="mb-6 ">Full Name</label>
           <span className="text-red-600">*</span>
-          <div className="flex gap-2 mb-6">
+          <div className="flex flex-col lg:flex-row md:flex-row  gap-2 mb-6">
             <input
-              className="border border-gray-300 rounded-lg p-2 flex-1 "
+              className="border border-gray-300 rounded-lg p-2 lg:flex-1 md: flex-1"
               placeholder="First Name"
               type="text"
             />
             <input
-              className="border border-gray-300 rounded-lg p-2 flex-1 "
+              className="border border-gray-300 rounded-lg p-2 lg:flex-1 md: flex-1 "
               placeholder="Middle Name"
               type="text"
             />
             <input
-              className="border border-gray-300 rounded-lg p-2 flex-1 "
+              className="border border-gray-300 rounded-lg p-2 lg:flex-1 md: flex-1"
               placeholder="Last Name"
               type="text"
             />
@@ -128,7 +127,7 @@ const Newsletter = () => {
               placeholder="Street Address Line 2"
               type="text"
             />
-            <div className="flex mb-6 gap-4">
+            <div className="flex flex-col lg:flex-row md:flex-row  mb-6 gap-4">
               <input
                 className="border border-gray-300 rounded-lg p-2 flex-1 "
                 placeholder="City"

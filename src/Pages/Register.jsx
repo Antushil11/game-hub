@@ -58,7 +58,7 @@ const Register = () => {
           });
         const user = result.user;
         // console.log(user);
-        toast.success("Successfuly Register");
+        // toast.success("Successfuly Register");
         setUser(user);
       })
       .catch((error) => {
