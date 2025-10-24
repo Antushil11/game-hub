@@ -10,7 +10,7 @@ import MyContainer from "./MyContainer";
 
 const Banner = () => {
   return (
-    <MyContainer className={"lg:mt-0 mt:mb-0 mt-16"}>
+    <MyContainer className={"lg:mt-0 mt:mb-2 mt-16"}>
       <Marquee className="flex gap-10 mt-2" pauseOnHover={true} speed={40}>
         <figure>
             <img className="md:max-w-6xl max-w-2xl lg:max-w-6xl ml-12 " src={godfall} alt="" />
