@@ -122,9 +122,7 @@ const Register = () => {
                 )}
               </span>
             </div>
-            <div>
-              <a className="link link-hover">Forgot password?</a>
-            </div>
+            
             <button type="submit" className="btn btn-primary mt-4 text-white ">
               Register
             </button>
