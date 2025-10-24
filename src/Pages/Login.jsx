@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { use, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthContext";
 import { toast } from "react-toastify";
@@ -8,26 +8,37 @@ import { IoEyeOff } from "react-icons/io5";
 
 const Login = () => {
   // Sign In
-  const { signIn, user,logOut,signInWithEmailFunc } = use(AuthContext);
-  console.log(user);
+  const {
+    signIn,
+    
+    setUser,
+    
+    signInWithEmailFunc,
+    sendPassResetEmailFunc,
+  } = use(AuthContext);
+  // console.log(user);
   const location = useLocation();
   const [show, setShow] = useState(false);
 
+  const emailRef = useRef(null);
+
   const navigate = useNavigate();
-  console.log(location);
+  // console.log(location);
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
-
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log({ email, password });
-
     signIn(email, password)
       .then((result) => {
+        console.log(result);
+        if (!result.user?.emailVerified) {
+          toast.error("you email is not verified ");
+          return;
+        }
         const user = result.user;
-        console.log(user);
+        setUser(user);
         toast.success("Login successfully");
         navigate(`${location.state ? location.state : "/"}`);
       })
@@ -38,20 +49,9 @@ const Login = () => {
       });
   };
 
-  const handleSignOut = () => {
-    logOut()
-      .then(() => {
-        alert("Your Logout successfully");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  const handleGoogleSignin =() =>{
+  const handleGoogleSignin = () => {
     signInWithEmailFunc()
-    .then((result) => {
-        
+      .then((result) => {
         console.log(result);
         // navigate(from)
         toast.success("signUp successfully");
@@ -60,8 +60,19 @@ const Login = () => {
         console.log(error);
         toast.error(error.message);
       });
-   
-  }
+  };
+  
+  const handleForgetPassword = () => {
+    // console.log(e.target.email)
+    const email = emailRef.current.value;
+    sendPassResetEmailFunc(email)
+      .then(() => {
+        toast.success("cheak your email ");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
 
   return (
     <div className="flex justify-center items-center min-h-screen ">
@@ -69,29 +80,16 @@ const Login = () => {
         <h2 className="font-semibold text-2xl text-center py-4">
           Login your account
         </h2>
-        {user ? (
-          <div>
-            <img
-              src={
-                user?.photoURL ||
-                "https://www.canto.com/cdn/2019/08/19194138/image-url-3.jpg"
-              }
-              className="h-20 w-20 rounded-full mx-auto"
-              alt=""
-            />
-            <h2 className="text-xl font-semibold">{user?.displayName}</h2>
-            <h2 className="text-white/80 font-semibold">{user?.email}</h2>
-            <button onClick={handleSignOut} className="btn bg-primary">
-              Sign Out
-            </button>
-          </div>
-        ) : (
+       
           <form onSubmit={handleLogin} className="card-body">
             <fieldset className="fieldset">
               {/* email */}
               <label className="label">Email</label>
               <input
                 type="email"
+                // value={email}
+                // onChange={(e) => setEmail(e.target.value)}
+                ref={emailRef}
                 name="email"
                 className="input"
                 placeholder="Email"
@@ -104,7 +102,6 @@ const Login = () => {
                   type={show ? "text" : "password"}
                   className="input text-gray-200"
                   placeholder="Password"
-                  required
                 />
 
                 <span
@@ -119,15 +116,22 @@ const Login = () => {
                 </span>
               </div>
               <div>
-                <a className="link link-hover">Forgot password?</a>
+                <button
+                  type="button"
+                  onClick={handleForgetPassword}
+                  className="link link-hover"
+                >
+                  Forgot password?
+                </button>
               </div>
+
               <button
                 type="submit"
                 className="btn btn-primary mt-4 text-white "
               >
                 Login
               </button>
-               {/* Divider */}
+              {/* Divider */}
               <div className="flex items-center justify-center gap-2 my-2">
                 <div className="h-px w-16 bg-white/30"></div>
                 <span className="text-sm text-white/70">or</span>
@@ -148,7 +152,6 @@ const Login = () => {
                 Continue with Google
               </button>
 
-              
               <p className="font-semibold text-center  pt-5">
                 {" "}
                 Dont’t Have An Account ?{" "}
@@ -161,7 +164,7 @@ const Login = () => {
               </p>
             </fieldset>
           </form>
-        )}
+        
       </div>
     </div>
   );

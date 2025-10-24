@@ -4,10 +4,11 @@ import { AuthContext } from "../provider/AuthContext";
 import { toast } from "react-toastify";
 import { FaEye, FaShower } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
+import { sendEmailVerification } from "firebase/auth";
 
 const Register = () => {
   // Sign Up
-  const { createUser, setUser } = use(AuthContext);
+  const { createUser, setUser, updateProfileFunc} = use(AuthContext);
 
   const [show, setShow] = useState(false);
 
@@ -15,11 +16,11 @@ const Register = () => {
     e.preventDefault();
 
     const form = e.target;
-    const name = form.name.value;
-    const photo = form.photo.value;
+    const displayName = form.name.value;
+    const photoURL = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log({ name, photo, email, password });
+    console.log({ displayName, photoURL, email, password });
     if (password.length < 6) {
       toast.error("password should be at least 6 digit");
       return;
@@ -34,8 +35,27 @@ const Register = () => {
       return;
     }
 
+    //1 step create user
+
     createUser(email, password)
       .then((result) => {
+        //2 step update profile
+        updateProfileFunc(displayName, photoURL)
+          .then(() => {
+            //3step email virification
+            sendEmailVerification(result.user)
+              .then((res) => {
+                console.log(res);
+                toast.success(" Check your email to active your account Verified your account");
+              })
+              .catch((error) => {
+                const errorMessage = error.message;
+                toast.error(errorMessage);
+              });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
         const user = result.user;
         // console.log(user);
         toast.success("Successfuly Register");
@@ -94,8 +114,15 @@ const Register = () => {
                 required
               />
 
-              <span onClick={() => setShow(!show)} className="absolute right-6 bottom-4 cursor-pointer z-50">
-                {show ? <FaEye className="w-8"></FaEye> : <IoEyeOff className="w-8"></IoEyeOff>}
+              <span
+                onClick={() => setShow(!show)}
+                className="absolute right-6 bottom-4 cursor-pointer z-50"
+              >
+                {show ? (
+                  <FaEye className="w-8"></FaEye>
+                ) : (
+                  <IoEyeOff className="w-8"></IoEyeOff>
+                )}
               </span>
             </div>
             <div>

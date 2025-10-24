@@ -4,22 +4,25 @@ import { Link } from "react-router";
 import MyContainer from "./MyContainer";
 import MyLink from "./MyLink";
 import { AuthContext } from "../provider/AuthContext";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
-  const handleLogOut = () => {
-    console.log("user trying log Out");
-    logOut()
-      .then(() => {
-        alert("Your Logout successfully")
-      })
-      .catch((error) => {
-        console.log(error)
-      });
-  };
+  
+
+  const handleSignOut = () => {
+      logOut()
+        .then(() => {
+          toast.success("Your Logout successfully");
+        })
+        .catch((error) => {
+          toast.error(error.message);
+        });
+    };
+  
   return (
     <div className="navbar  bg-slate-100f py-2 border-b-2 border-gray-500 bg-black lg:mb-0 md:mb-0 mb-20">
-      <div>{user && user.email}</div>
+      
       <MyContainer>
         <div className="navbar  shadow-sm">
           <div className="navbar-start">
@@ -69,14 +72,25 @@ const Navbar = () => {
               </ul>
             </ul>
 
-            {user ? (
-              <button
-                onClick={handleLogOut}
-                className="btn bg-linear-to-r from-[#FFA726] to-[#FB8C00] text-white"
-              >
+            {user ?  (
+          <div className="">
+            <img
+              src={
+                user?.photoURL ||
+                "https://www.canto.com/cdn/2019/08/19194138/image-url-3.jpg"
+              }
+              className="h-20 w-20 rounded-full mx-auto"
+              alt=""
+            />
+            <div className="flex flex-col items-center justify-center gap-2 mt-2">
+              <h2 className="text-xl font-semibold">{user?.displayName}</h2>
+              <h2 className="text-white/80 font-semibold">{user?.email}</h2>
+              <button onClick={handleSignOut} className="btn bg-primary">
                 Sign Out
               </button>
-            ) : (
+            </div>
+          </div>
+        ): (
               <button className="btn bg-linear-to-r from-[#FFA726] to-[#FB8C00] text-white">
                 <Link to={"/auth/login"}>Sign In</Link>
               </button>

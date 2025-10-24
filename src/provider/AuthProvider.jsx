@@ -1,31 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { AuthContext } from "./AuthContext";
-
+import { auth } from "../firebase/firebase.config";
 import {
   createUserWithEmailAndPassword,
-  getAuth,
   GoogleAuthProvider,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
-import app from "../firebase/firebase.config";
 
-const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
-// const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  console.log(loading, user);
-
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
+
+  const updateProfileFunc = (displayName, photoURL) => {
+    return updateProfile(auth.currentUser, {
+      displayName,
+      photoURL,
+    });
+  };
+
+  
 
   const signIn = (email, password) => {
     setLoading(true);
@@ -40,6 +45,11 @@ const AuthProvider = ({ children }) => {
   const signInWithEmailFunc = () => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
+  };
+
+  const sendPassResetEmailFunc = (email) => {
+    setLoading(true);
+    return sendPasswordResetEmail(auth, email);
   };
 
   useEffect(() => {
@@ -62,6 +72,8 @@ const AuthProvider = ({ children }) => {
     loading,
     setLoading,
     signInWithEmailFunc,
+    updateProfileFunc,
+    sendPassResetEmailFunc,
   };
 
   return <AuthContext value={authData}>{children}</AuthContext>;
