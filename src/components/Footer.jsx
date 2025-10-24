@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="w-full bg-base-200 ">
         
       <MyContainer>
-        <img className="max-h-20 mb-[-40px]" src={logo} alt="" />
+        <img className="max-h-20" src={logo} alt="" />
         <footer className=" text-gray-300 py-12 px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             <div>
