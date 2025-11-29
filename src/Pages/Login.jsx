@@ -23,7 +23,7 @@ const Login = () => {
   const emailRef = useRef(null);
 
   const navigate = useNavigate();
-  // console.log(location);
+ 
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
