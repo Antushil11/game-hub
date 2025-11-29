@@ -20,7 +20,7 @@ const ProfilePages = () => {
       
     
       <div className="w-full max-w-md text-white backdrop-blur-lg bg-white/10 border border-white/20 shadow-2xl rounded-2xl p-8 ">
-        <h2 className="text-2xl font-bold text-gray-400 mb-6 text-center">Profile Details</h2>
+        <h2 className="text-2xl font-bold text-gray-400 mb-6 text-center">MY Profile </h2>
         <img
           src={
             user?.photoURL ||

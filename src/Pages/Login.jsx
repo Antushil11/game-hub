@@ -51,6 +51,7 @@ const Login = () => {
         console.log(result);
         // navigate(from)
         toast.success("signUp successfully");
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
         console.log(error);

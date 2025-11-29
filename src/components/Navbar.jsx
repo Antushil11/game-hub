@@ -112,7 +112,7 @@ const Navbar = () => {
               </div>
             ) : (
               <button className="btn bg-linear-to-r from-[#FFA726] to-[#FB8C00] text-white">
-                <Link to={"/auth/login"}>Sign In</Link>
+                <Link to={"/auth/login"}>Login</Link>
               </button>
             )}
           </div>

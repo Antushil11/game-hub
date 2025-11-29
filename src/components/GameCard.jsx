@@ -32,7 +32,7 @@ const GameCard = ({ game }) => {
             <FaStar className="mr-1" />
             <span className="font-medium text-white">{ratings}</span>
           </div>
-          <Link to={`/games-details/${id}`} className="btn bg-primary text-white font-semibold cursor-pointer">
+          <Link to={`/games-details/${id}`} className="btn bg-primary text-white font-semibold cursor-pointer hover:bg-amber-800 ">
             Game Details
           </Link>
         </div>
