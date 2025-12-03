@@ -19,9 +19,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-16 px-4">
+    <div className="min-h-screen  text-white py-16 px-4">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6 text-center">Contact Us</h1>
+        <h1 className="text-2xl font-bold text-gray-400 mb-6 text-center">Contact Us</h1>
         <p className="text-center mb-8 text-lg">
           Have questions or feedback? Send us a message and we will get back to you as soon as possible.
         </p>
