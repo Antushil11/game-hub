@@ -1,14 +1,14 @@
 import React from "react";
 import MyContainer from "./MyContainer";
 import logo from "../../src/assets/create a GameHub log.png";
+import { FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <div className="w-full bg-base-200 ">
-        
       <MyContainer>
         <img className="max-h-20" src={logo} alt="" />
-        <footer className=" text-gray-300 py-12 px-8">
+        <footer className=" text-gray-300 py-12 ">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             <div>
               <h3 className="text-white font-semibold mb-4">Service</h3>
@@ -42,7 +42,7 @@ const Footer = () => {
               <p className="text-sm mb-4">
                 You'll find your next freelance valu you prefer.
               </p>
-              <div className="flex bg-white max-w-full rounded-2xl" >
+              <div className="flex bg-white max-w-full rounded-2xl">
                 <input
                   type="email"
                   placeholder="Enter your mail"
@@ -52,15 +52,16 @@ const Footer = () => {
                   →
                 </button>
               </div>
+              
             </div>
           </div>
           <div className="mt-12 flex flex-col sm:flex-row justify-between items-center text-sm text-white">
             <h2 className="text-white font-semibold text-lg">Investa</h2>
-            
           </div>
         </footer>
-        <p className="text-center ">Copyrightantushil2025@.com, All rights reserved.</p>
-
+        <p className="text-center ">
+          Copyrightantushil2025@.com, All rights reserved.
+        </p>
       </MyContainer>
     </div>
   );

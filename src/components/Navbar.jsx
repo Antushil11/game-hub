@@ -4,11 +4,11 @@ import { Link, NavLink } from "react-router";
 import MyContainer from "./MyContainer";
 import MyLink from "./MyLink";
 import { AuthContext } from "../provider/AuthContext";
-import {  } from "react-toastify";
+import {} from "react-toastify";
 import ProfilePages from "./ProfilePages";
 
 const Navbar = () => {
-  const { user,  } = use(AuthContext);
+  const { user } = use(AuthContext);
 
   // const handleSignOut = () => {
   //   logOut()
@@ -55,19 +55,23 @@ const Navbar = () => {
                   <MyLink to={"/"}>Home</MyLink>
                   <MyLink to={"/games"}>Games</MyLink>
                   <MyLink to={"/newsletter"}>Newsletter</MyLink>
+                  <MyLink to="/about">About</MyLink>
+                  <MyLink to="/contact">Contact</MyLink>
                 </ul>
               </ul>
             </div>
             <figure>
-              <img src={logo} className="w-[140px]  " />
+              <img src={logo} className="w-[140px]" />
             </figure>
           </div>
-          <div className="navbar-end gap-20 ">
+          <div className="navbar-end gap-10 ">
             <ul className="menu hidden lg:flex   menu-horizontal px-1">
-              <ul className="flex items-center gap-20 ">
+              <ul className="flex items-center gap-10 ">
                 <MyLink to={"/"}>Home</MyLink>
                 <MyLink to={"/games"}>Games</MyLink>
                 <MyLink to={"/newsletter"}>Newsletter</MyLink>
+                <MyLink to="/about">About</MyLink>
+                <MyLink to="/contact">Contact</MyLink>
               </ul>
             </ul>
 
@@ -75,7 +79,8 @@ const Navbar = () => {
               <div className="">
                 {/* change popover-1 and --anchor-1 names. Use unique names for each dropdown */}
                 {/* For TSX uncomment the commented types below */}
-                <NavLink to={"/profile"}
+                <NavLink
+                  to={"/profile"}
                   className=""
                   popoverTarget="popover-1"
                   style={
@@ -84,8 +89,8 @@ const Navbar = () => {
                 >
                   <img
                     src={
-                    `${user ? user.photoURL: "" }`
-                      
+                      `${user ? user.photoURL : ""}`
+
                       // user?.photoURL ||
                       // ""
                     }
@@ -104,9 +109,8 @@ const Navbar = () => {
                     } /* as React.CSSProperties */
                   }
                 >
-                  
                   <div className="flex flex-col items-center justify-center gap-2 mt-2">
-                   <ProfilePages></ProfilePages>
+                    <ProfilePages></ProfilePages>
                   </div>
                 </div>
               </div>

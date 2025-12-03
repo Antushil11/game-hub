@@ -11,6 +11,8 @@ import PrivateRoute from "../provider/PrivateRoute";
 import Loading from "../Pages/Loading";
 import ProfilePages from "../components/ProfilePages";
 import ErrorPage from "../Pages/ErrorPage";
+import About from "../Pages/About";
+import Contact from "../Pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
         path: "/newsletter",
         element: <Newsletter></Newsletter>,
       },
+      {
+        path: "/about",
+        element: <About></About>
+      },
+      {
+        path:"/contact",
+        element: <Contact></Contact>
+      }
     ],
   },
   {
