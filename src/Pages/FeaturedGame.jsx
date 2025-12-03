@@ -41,7 +41,7 @@ const FeaturedGame = () => {
               href={game.download}
               target="_blank"
               rel="noreferrer"
-              className="btn bg-primary text-whinpm install react-icons --savete font-semibold cursor-pointer hover:bg-amber-800 "
+              className="btn bg-primary text-white font-semibold cursor-pointer hover:bg-amber-800 "
             >
               Download Now
             </a>
