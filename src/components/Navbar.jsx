@@ -21,9 +21,10 @@ const Navbar = () => {
   // };
 
   return (
-    <div className="navbar  py-2 border-b-2 border-gray-500 bg-black ">
-      <MyContainer>
-        <div className="navbar   shadow-sm">
+    <div className="sticky top-0 z-50 bg-black border-b-2 border-gray-500">
+  <MyContainer>
+    <div className="navbar py-2 shadow-sm">
+
           <div className="navbar-start">
             <div className="dropdown">
               <div
