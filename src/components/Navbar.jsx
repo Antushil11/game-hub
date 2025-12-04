@@ -53,26 +53,26 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
               >
                 <ul className="flex items-center flex-col gap-1 ">
-                  <MyLink to={"/"}>Home</MyLink>
-                  <MyLink to={"/games"}>Games</MyLink>
-                  <MyLink to={"/newsletter"}>Newsletter</MyLink>
-                  <MyLink to="/about">About</MyLink>
-                  <MyLink to="/contact">Contact</MyLink>
+                  <MyLink className={"hover:text-amber-600"} to={"/"}>Home</MyLink>
+                  <MyLink className={"hover:text-amber-600"} to={"/games"}>Games</MyLink>
+                  <MyLink className={"hover:text-amber-600"} to={"/newsletter"}>Newsletter</MyLink>
+                  <MyLink className={"hover:text-amber-600"} to="/about">About</MyLink>
+                  <MyLink className={"hover:text-amber-600"} to="/contact">Contact</MyLink>
                 </ul>
               </ul>
             </div>
             <figure>
-              <img src={logo} className="w-[140px]" />
+              <img src={logo} className="w-[140px] -ml-4 " />
             </figure>
           </div>
           <div className="navbar-end gap-10 ">
             <ul className="menu hidden lg:flex   menu-horizontal px-1">
               <ul className="flex items-center gap-10 ">
-                <MyLink to={"/"}>Home</MyLink>
-                <MyLink to={"/games"}>Games</MyLink>
-                <MyLink to={"/newsletter"}>Newsletter</MyLink>
-                <MyLink to="/about">About</MyLink>
-                <MyLink to="/contact">Contact</MyLink>
+                <MyLink className={"hover:text-amber-600"} to={"/"}>Home</MyLink>
+                <MyLink className={"hover:text-amber-600"} to={"/games"}>Games</MyLink>
+                <MyLink className={"hover:text-amber-600"} to={"/newsletter"}>Newsletter</MyLink>
+                <MyLink className={"hover:text-amber-600"} to="/about">About</MyLink>
+                <MyLink className={"hover:text-amber-600"} to="/contact">Contact</MyLink>
               </ul>
             </ul>
 
